@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>  
+  <title>Profit/Loss Calculator</title>  
+  <link rel="stylesheet" href="styles.css">  
+</head>  
+<body>  
+  <div class="container">  
+    <button id="addDataBtn">Add Data</button>  
+    
+    <!-- Form initially hidden -->
+    <form id="productForm" style="display: none;">  
+      <label for="productName">Product Name:</label>  
+      <input type="text" id="productName" name="productName" required><br>  
+        
+      <label for="buyPrice">Buy Price (each):</label>  
+      <input type="number" id="buyPrice" name="buyPrice" min="0" required><br>  
+        
+      <label for="sellPrice">Sell Price (each):</label>  
+      <input type="number" id="sellPrice" name="sellPrice" min="0" required><br>  
+        
+      <label for="quantity">Quantity Sold:</label>  
+      <input type="number" id="quantity" name="quantity" min="1" required><br>  
+        
+      <button type="submit" id="calculateBtn">Calculate Profit</button>  
+    </form>  
+        
+    <div id="result" style="display: none;">  
+      <h2>Profit/Loss:</h2>  
+      <p id="profitAmount"></p>  
+    </div>  
+
+    <!-- History section -->
+    <div id="history">
+      <h2>Calculation History</h2>  
+      <select id="filter">
+        <option value="daily">Daily</option>
+        <option value="weekly">Weekly</option>
+        <option value="monthly">Monthly</option>
+        <option value="yearly">Yearly</option>
+      </select>  
+      <button id="showHistoryBtn">Show History</button>  
+      <table id="historyTable">  
+        <thead>  
+          <tr>  
+            <th>Date</th>  
+            <th>Product</th>  
+            <th>Buy Price</th>  
+            <th>Sell Price</th>  
+            <th>Quantity</th>  
+            <th>Profit</th>  
+          </tr>  
+        </thead>  
+        <tbody>  
+        </tbody>  
+      </table>  
+    </div>  
+  </div>  
+
+  <script src="script.js"></script>  
+</body>  
+</html>
